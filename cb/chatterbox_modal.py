@@ -19,7 +19,7 @@ app = modal.App("chatterbox-tts", image=image)
 
 @app.cls(
     gpu="T4",
-    scaledown_window=300,
+    scaledown_window=30,
 )
 class ChatterboxTTS:
     @modal.enter()
@@ -50,9 +50,12 @@ class ChatterboxTTS:
         buffer.seek(0)
         return buffer.getvalue()
 
+
+
 @app.local_entrypoint()
 def main(text: str, exaggeration: float = 0.5, cfg_weight: float = 0.5):
     """Local entrypoint to test the TTS"""
+
     tts = ChatterboxTTS()
     audio_bytes = tts.generate.remote(text, exaggeration=exaggeration, cfg_weight=cfg_weight)
 
@@ -62,13 +65,21 @@ def main(text: str, exaggeration: float = 0.5, cfg_weight: float = 0.5):
     print(f"Generated audio saved to output.wav")
 
 @app.function()
-@modal.fastapi_endpoint(method="POST")
-def api_generate(text: str, exaggeration: float = 0.5, cfg_weight: float = 0.5):
+@modal.fastapi_endpoint(method="POST", docs=True)
+def api_generate(body: dict):
     """Web API endpoint for TTS generation"""
+    from fastapi import Response
+
+    # text: str, exaggeration: float = 0.5, cfg_weight: float = 0.5
+    text = body.get("text", "You did not specify a text")
+    exaggeration = float(body.get("exaggeration", "0.5"))
+    cfg_weight = float(body.get("cfg_weight", "0.5"))
+
+
     tts = ChatterboxTTS()
     audio_bytes = tts.generate.remote(text, exaggeration=exaggeration, cfg_weight=cfg_weight)
-
-    return modal.Response(
+    print(audio_bytes)
+    return Response(
         audio_bytes,
         headers={"Content-Type": "audio/wav"}
     )
