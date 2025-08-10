@@ -7,6 +7,7 @@ import { Waveform } from "./Waveform";
 import { BassOverlay } from "./BassOverlay";
 import { SongInfo } from "./SongInfo";
 import { Caption } from "./Caption";
+import { BackgroundVideo } from "./BackgroundVideo";
 import { FONT_FAMILY } from "../helpers/font";
 
 const containerStyle: React.CSSProperties = {
@@ -40,17 +41,24 @@ export const Visualizer: React.FC<AudiogramCompositionSchemaType> = ({
   const { fps } = useVideoConfig();
   const audioOffsetInFrames = Math.round(audioOffsetInSeconds * fps);
 
+  // Calculate audio duration from timestamps (approximate)
+  const audioDuration = timestamps && timestamps.length > 0 
+    ? timestamps[timestamps.length - 1].end + 1 
+    : 17; // fallback duration
+
   return (
-    <AbsoluteFill
-      style={{
-        backgroundColor: "#000000",
-      }}
-    >
+    <AbsoluteFill>
+      {/* Background video */}
+      <BackgroundVideo 
+        videoSrc="minecraft.mp4" 
+        audioDuration={audioDuration}
+      />
+      
       <Sequence from={-audioOffsetInFrames}>
         <BassOverlay audioSrc={audioFileUrl} color={visualizer.color} />
         <Audio pauseWhenBuffering src={audioFileUrl} />
-        <AbsoluteFill style={containerStyle}>
-          <div style={visualizerContainerStyle}>
+        <AbsoluteFill style={{...containerStyle, backgroundColor: "transparent", zIndex: 3}}>
+          <div style={{...visualizerContainerStyle, zIndex: 3}}>
             {visualizer.type === "oscilloscope" ? (
               <Waveform
                 waveColor={visualizer.color}

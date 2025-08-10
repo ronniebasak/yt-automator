@@ -191,6 +191,7 @@ def text_to_speech(script_text: str, output_dir: str, filename: str = "speech.wa
             if not speech_file_path.exists():
                 raise Exception("Failed to create audio file")
             
+            
             file_size = speech_file_path.stat().st_size
             if file_size == 0:
                 raise Exception("Generated audio file is empty")

@@ -40,6 +40,7 @@ export const BassOverlay: React.FC<BassOverlayProps> = ({
     <AbsoluteFill
       style={{
         opacity,
+        zIndex: 2,
       }}
     >
       <AbsoluteFill

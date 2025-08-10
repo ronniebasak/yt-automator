@@ -67,6 +67,7 @@ export const Caption: React.FC<CaptionProps> = ({ timestamps, textColor }) => {
         backdropFilter: "blur(15px)",
         border: "1px solid rgba(255, 255, 255, 0.1)",
         transition: "all 0.5s ease-in-out",
+        zIndex: 10,
       }}
     >
       <div
