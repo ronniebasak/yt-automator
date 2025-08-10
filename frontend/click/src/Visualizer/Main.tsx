@@ -16,6 +16,7 @@ export const Visualizer: React.FC<AudiogramCompositionSchemaType> = ({
   audioOffsetInSeconds,
   textColor,
   timestamps,
+  randomSeed,
 }) => {
   const { fps } = useVideoConfig();
   const audioOffsetInFrames = Math.round(audioOffsetInSeconds * fps);
@@ -23,6 +24,13 @@ export const Visualizer: React.FC<AudiogramCompositionSchemaType> = ({
   // State for dynamic timestamps
   const [dynamicTimestamps, setDynamicTimestamps] = useState<TimestampData[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  
+  // Generate random video start position on component mount
+  const [videoStartPosition] = useState(() => {
+    // Generate a random position between 0 and max available time
+    // This will be consistent for both preview and render within the same session
+    return Math.random();
+  });
 
   // Load timestamps dynamically if not provided
   useEffect(() => {
@@ -61,6 +69,8 @@ export const Visualizer: React.FC<AudiogramCompositionSchemaType> = ({
       <BackgroundVideo 
         videoSrc="minecraft.mp4" 
         audioDuration={audioDuration}
+        audioFileName={audioFileUrl.split('/').pop() || audioFileUrl}
+        startPosition={videoStartPosition}
       />
       
       <Sequence from={-audioOffsetInFrames}>

@@ -45,6 +45,8 @@ export const visualizerCompositionSchema = z.object({
   audioOffsetInSeconds: z.number().min(0),
   // caption settings
   timestamps: z.array(timestampSchema).optional(),
+  // random seed for video start position
+  randomSeed: z.number().optional(),
 });
 
 export type AudiogramCompositionSchemaType = z.infer<

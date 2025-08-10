@@ -36,23 +36,44 @@ export const RemotionRoot: React.FC = () => {
           },
           // caption settings - will be loaded dynamically in the component
           timestamps: undefined,
+          // Don't set randomSeed here - will be generated in the component
         }}
-        // Determine the length of the video based on the duration of the audio file
+        // Determine the length of the video based on timestamp data (same as preview)
         calculateMetadata={async ({ props }) => {
-          const { slowDurationInSeconds } = await parseMedia({
-            src: props.audioFileUrl,
-            fields: {
-              slowDurationInSeconds: true,
-            },
-            acknowledgeRemotionLicense: true,
-          });
+          try {
+            // Get audio filename from URL
+            const audioFileName = props.audioFileUrl.split('/').pop() || props.audioFileUrl;
+            const config = await getConfigForAudio(audioFileName);
+            
+            // Calculate duration from timestamps (same method as in Main.tsx)
+            const audioDuration = config.timestamps && config.timestamps.length > 0 
+              ? config.timestamps[config.timestamps.length - 1].end + 1 
+              : 17; // fallback duration
 
-          return {
-            durationInFrames: Math.floor(
-              (slowDurationInSeconds - props.audioOffsetInSeconds) * FPS,
-            ),
-            fps: FPS,
-          };
+            return {
+              durationInFrames: Math.floor(
+                (audioDuration - props.audioOffsetInSeconds) * FPS,
+              ),
+              fps: FPS,
+            };
+          } catch (error) {
+            console.error('Error calculating metadata:', error);
+            // Fallback to parsing audio file if timestamp method fails
+            const { slowDurationInSeconds } = await parseMedia({
+              src: props.audioFileUrl,
+              fields: {
+                slowDurationInSeconds: true,
+              },
+              acknowledgeRemotionLicense: true,
+            });
+
+            return {
+              durationInFrames: Math.floor(
+                (slowDurationInSeconds - props.audioOffsetInSeconds) * FPS,
+              ),
+              fps: FPS,
+            };
+          }
         }}
       />
     </>
