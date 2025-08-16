@@ -93,14 +93,6 @@ export const Visualizer: React.FC<AudiogramCompositionSchemaType> = ({
       {/* Background video */}
 
       <Sequence from={-audioOffsetInFrames}>
-        {/*<BackgroundVideo
-          videoSrc="minecraft.mp4"
-          audioDuration={audioDuration}
-          audioFileName={audioFileUrl.split('/').pop() || audioFileUrl}
-          startPosition={videoStartPosition}
-        />
-        */}
-
         {typeof videoStartPosition === "number" && (
           <Video
             src={staticFile("minecraft.mp4")}
