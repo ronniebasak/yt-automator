@@ -1,0 +1,6 @@
+You can generate chunks py running from CWD funfacts-finder
+Then, run 
+
+```
+python fffinder/steps/facts_sampler.py
+```

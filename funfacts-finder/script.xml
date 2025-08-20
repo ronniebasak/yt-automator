@@ -1,0 +1,117 @@
+<VideoContainer> <!--extremely attention grabbing first scene, title is very short, 1 or 2 words max)--> <Scene name="intro" title="Mind-Blowers!"> <VoiceOver id="v01"> <!-- each VOFragment is visible on subtitle text at a single glance, do not make it too verbose --> <VOFragment>Hey there, knowledge junkies!</VOFragment> <VOFragment>Strap in for some </VOFragment> <VOFragment>mind-bending facts </VOFragment> <VOFragment>that'll blow your socks off!</VOFragment> </VoiceOver> </Scene>
+
+    <Scene name="fact-1" title="Teaspoon Mystery">
+        <VoiceOver id="f-01">
+            <VOFragment>Ever wonder where </VOFragment>
+            <VOFragment>all the teaspoons disappear to?</VOFragment>
+            <VOFragment>Scientists actually studied this!</VOFragment>
+            <VOFragment>In 2004, Australian researchers </VOFragment>
+            <VOFragment>investigated the great </VOFragment>
+            <VOFragment>workplace teaspoon vanishing act!</VOFragment>
+        </VoiceOver>
+    </Scene>
+    
+    <Scene name="fact-2" title="Peace Pioneer">
+        <VoiceOver id="f-02">
+            <VOFragment>History making moment!</VOFragment>
+            <VOFragment>Ralph Bunche smashed barriers </VOFragment>
+            <VOFragment>as the first Black person </VOFragment>
+            <VOFragment>to win the Nobel Peace Prize.</VOFragment>
+            <VOFragment>His 1950 mediation work </VOFragment>
+            <VOFragment>between Arabs and Israelis? </VOFragment>
+            <VOFragment>Absolutely legendary!</VOFragment>
+        </VoiceOver>
+    </Scene>
+    
+    <Scene name="fact-3" title="Spartan Rules">
+        <VoiceOver id="f-03">
+            <VOFragment>Talk about military dedication!</VOFragment>
+            <VOFragment>Spartan men couldn't live </VOFragment>
+            <VOFragment>with their families until age 30!</VOFragment>
+            <VOFragment>That's right - decades of </VOFragment>
+            <VOFragment>military service before </VOFragment>
+            <VOFragment>any family time!</VOFragment>
+        </VoiceOver>
+    </Scene>
+    
+    <Scene name="fact-4" title="Holy War">
+        <VoiceOver id="f-04">
+            <VOFragment>Get this - the U.S. literally </VOFragment>
+            <VOFragment>declared war on the Mormon Church!</VOFragment>
+            <VOFragment>1857 was wild when the Feds </VOFragment>
+            <VOFragment>said "absolutely not" </VOFragment>
+            <VOFragment>to Utah's religious laws!</VOFragment>
+            <VOFragment>Church vs State showdown!</VOFragment>
+        </VoiceOver>
+    </Scene>
+    
+    <Scene name="fact-5" title="Hidden Jobs">
+        <VoiceOver id="f-05">
+            <VOFragment>Job hunting tip that'll </VOFragment>
+            <VOFragment>change your life!</VOFragment>
+            <VOFragment>A whopping 80% of U.S. jobs </VOFragment>
+            <VOFragment>are never even advertised!</VOFragment>
+            <VOFragment>It's all about who you know, </VOFragment>
+            <VOFragment>not what you apply for!</VOFragment>
+        </VoiceOver>
+    </Scene>
+    
+    <Scene name="fact-6" title="Deadly Commute">
+        <VoiceOver id="f-06">
+            <VOFragment>This will shock you!</VOFragment>
+            <VOFragment>In 2015 alone, </VOFragment>
+            <VOFragment>NINE people died EVERY DAY </VOFragment>
+            <VOFragment>just commuting on </VOFragment>
+            <VOFragment>Mumbai's local trains!</VOFragment>
+            <VOFragment>Makes your traffic jam </VOFragment>
+            <VOFragment>seem pretty tame, huh?</VOFragment>
+        </VoiceOver>
+    </Scene>
+    
+    <Scene name="fact-7" title="Tree Naps">
+        <VoiceOver id="f-07">
+            <VOFragment>Trees are basically </VOFragment>
+            <VOFragment>the ultimate nappers!</VOFragment>
+            <VOFragment>Science proves they "sleep" at night, </VOFragment>
+            <VOFragment>chilling out their branches </VOFragment>
+            <VOFragment>after dark and </VOFragment>
+            <VOFragment>perking up before sunrise!</VOFragment>
+        </VoiceOver>
+    </Scene>
+    
+    <Scene name="fact-8" title="SPF Exposed">
+        <VoiceOver id="f-08">
+            <VOFragment>Your sunscreen is lying to you!</VOFragment>
+            <VOFragment>SPF is totally nonlinear!</VOFragment>
+            <VOFragment>SPF 15 blocks 93%, </VOFragment>
+            <VOFragment>SPF 30 blocks 97%, </VOFragment>
+            <VOFragment>and SPF 50? Just 98%!</VOFragment>
+            <VOFragment>That higher number isn't </VOFragment>
+            <VOFragment>as magical as you think!</VOFragment>
+        </VoiceOver>
+    </Scene>
+    
+    <Scene name="fact-9" title="Texas Limit">
+        <VoiceOver id="f-09">
+            <VOFragment>Texas has some </VOFragment>
+            <VOFragment>interesting priorities!</VOFragment>
+            <VOFragment>It's actually illegal to own </VOFragment>
+            <VOFragment>six or more dildos there!</VOFragment>
+            <VOFragment>Five? You're good!</VOFragment>
+            <VOFragment>Six? You're a criminal!</VOFragment>
+        </VoiceOver>
+    </Scene>
+    
+    <Scene name="fact-10" title="Word Power">
+        <VoiceOver id="f-10">
+            <VOFragment>Your brain is a dictionary!</VOFragment>
+            <VOFragment>By age 20, the average </VOFragment>
+            <VOFragment>English-speaking American </VOFragment>
+            <VOFragment>knows a staggering </VOFragment>
+            <VOFragment>42,000 dictionary words!</VOFragment>
+            <VOFragment>No wonder you're so </VOFragment>
+            <VOFragment>impressively articulate!</VOFragment>
+        </VoiceOver>
+    </Scene>
+    
+    </VideoContainer>
