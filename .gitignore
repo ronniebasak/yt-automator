@@ -1,11 +1,9 @@
-<<<<<<< HEAD
 __pycache__
 *.pyx
 *.pyc
 .swp
 .ropeproject
 
-=======
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # Byte-compiled / optimized / DLL files
@@ -180,4 +178,7 @@ web/.yarn/*
 # Docusaurus
 .docusaurus
 .cache-loader
->>>>>>> 7c727aa (inital commit with caption and audio connected)
+
+.wav
+.mp3
+.aac

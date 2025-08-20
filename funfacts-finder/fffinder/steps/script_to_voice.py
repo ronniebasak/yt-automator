@@ -18,10 +18,12 @@ from pathlib import Path
 from typing import List, Optional
 import tempfile
 import json
+import dotenv
 
 # Import your parser (assuming it's in video_script_parser.py)
-from .script_parser import VideoScriptParser, VideoContainer, Scene, VoiceOver
+from fffinder.steps.script_parser import VideoScriptParser, VideoContainer, Scene, VoiceOver
 
+dotenv.load_dotenv()
 
 class TTSGenerator:
     """Handles TTS generation via API"""
@@ -263,7 +265,7 @@ def main():
     
     # Configuration
     TTS_API_URL = "https://ronniebasak--chatterbox-tts-api-generate.modal.run/"
-    SCRIPT_FILE = "video_script.xml"  # Your JSX/XML file path
+    SCRIPT_FILE = "script.xml"  # Your JSX/XML file path
     OUTPUT_FILE = "final_video_audio.wav"
     
     # Initialize processor
@@ -274,8 +276,8 @@ def main():
         result = processor.process_video_script(
             script_file_path=SCRIPT_FILE,
             output_path=OUTPUT_FILE,
-            scene_offset=1.5,  # 1.5 second offset between scenes
-            exaggeration=0.2   # TTS exaggeration level
+            scene_offset=0.5,  # 1.5 second offset between scenes
+            exaggeration=0.4   # TTS exaggeration level
         )
         
         print(f"\n🎉 Success! Final audio saved to: {result}")
