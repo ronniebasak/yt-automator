@@ -1,4 +1,14 @@
-<VideoContainer> <!--extremely attention grabbing first scene, title is very short, 1 or 2 words max)--> <Scene name="intro" title="Mind-Blowers!"> <VoiceOver id="v01"> <!-- each VOFragment is visible on subtitle text at a single glance, do not make it too verbose --> <VOFragment>Hey there, knowledge junkies!</VOFragment> <VOFragment>Strap in for some </VOFragment> <VOFragment>mind-bending facts </VOFragment> <VOFragment>that'll blow your socks off!</VOFragment> </VoiceOver> </Scene>
+<VideoContainer>
+    <!--extremely attention grabbing first scene, title is very short, 1 or 2 words max)-->
+    <Scene name="intro" title="Mind-Blowers!"> 
+        <VoiceOver id="v01">
+            <!-- each VOFragment is visible on subtitle text at a single glance, do not make it too verbose -->
+            <VOFragment>Hey there, knowledge junkies!</VOFragment>
+            <VOFragment>Strap in for some </VOFragment>
+            <VOFragment>mind-bending facts </VOFragment>
+            <VOFragment>that'll blow your socks off!</VOFragment>
+        </VoiceOver>
+    </Scene>
 
     <Scene name="fact-1" title="Teaspoon Mystery">
         <VoiceOver id="f-01">
@@ -10,7 +20,7 @@
             <VOFragment>workplace teaspoon vanishing act!</VOFragment>
         </VoiceOver>
     </Scene>
-    
+
     <Scene name="fact-2" title="Peace Pioneer">
         <VoiceOver id="f-02">
             <VOFragment>History making moment!</VOFragment>
@@ -22,7 +32,7 @@
             <VOFragment>Absolutely legendary!</VOFragment>
         </VoiceOver>
     </Scene>
-    
+
     <Scene name="fact-3" title="Spartan Rules">
         <VoiceOver id="f-03">
             <VOFragment>Talk about military dedication!</VOFragment>
@@ -33,7 +43,7 @@
             <VOFragment>any family time!</VOFragment>
         </VoiceOver>
     </Scene>
-    
+
     <Scene name="fact-4" title="Holy War">
         <VoiceOver id="f-04">
             <VOFragment>Get this - the U.S. literally </VOFragment>
@@ -44,7 +54,7 @@
             <VOFragment>Church vs State showdown!</VOFragment>
         </VoiceOver>
     </Scene>
-    
+
     <Scene name="fact-5" title="Hidden Jobs">
         <VoiceOver id="f-05">
             <VOFragment>Job hunting tip that'll </VOFragment>
@@ -55,7 +65,7 @@
             <VOFragment>not what you apply for!</VOFragment>
         </VoiceOver>
     </Scene>
-    
+
     <Scene name="fact-6" title="Deadly Commute">
         <VoiceOver id="f-06">
             <VOFragment>This will shock you!</VOFragment>
@@ -67,7 +77,7 @@
             <VOFragment>seem pretty tame, huh?</VOFragment>
         </VoiceOver>
     </Scene>
-    
+
     <Scene name="fact-7" title="Tree Naps">
         <VoiceOver id="f-07">
             <VOFragment>Trees are basically </VOFragment>
@@ -78,7 +88,7 @@
             <VOFragment>perking up before sunrise!</VOFragment>
         </VoiceOver>
     </Scene>
-    
+
     <Scene name="fact-8" title="SPF Exposed">
         <VoiceOver id="f-08">
             <VOFragment>Your sunscreen is lying to you!</VOFragment>
@@ -90,7 +100,7 @@
             <VOFragment>as magical as you think!</VOFragment>
         </VoiceOver>
     </Scene>
-    
+
     <Scene name="fact-9" title="Texas Limit">
         <VoiceOver id="f-09">
             <VOFragment>Texas has some </VOFragment>
@@ -101,7 +111,7 @@
             <VOFragment>Six? You're a criminal!</VOFragment>
         </VoiceOver>
     </Scene>
-    
+
     <Scene name="fact-10" title="Word Power">
         <VoiceOver id="f-10">
             <VOFragment>Your brain is a dictionary!</VOFragment>
@@ -113,5 +123,4 @@
             <VOFragment>impressively articulate!</VOFragment>
         </VoiceOver>
     </Scene>
-    
-    </VideoContainer>
+</VideoContainer>
